@@ -51,7 +51,10 @@ class G(nn.Module): # We introduce a class to define the generator.
             nn.ConvTranspose2d(128, 64, 4, 2, 1, bias = False), # We add another inversed convolution.
             nn.BatchNorm2d(64), # We normalize again.
             nn.ReLU(True), # We apply another ReLU.
-            nn.ConvTranspose2d(64, 3, 4, 2, 1, bias = False), # We add another inversed convolution.
+            nn.ConvTranspose2d(64, 32, 4, 2, 1, bias = False), # We add another inversed convolution.
+            nn.BatchNorm2d(32), # We normalize again.
+            nn.ReLU(True), # We apply another ReLU.
+            nn.ConvTranspose2d(32, 3, 4, 2, 1, bias = False), # We add another inversed convolution.
             nn.Tanh() # We apply a Tanh rectification to break the linearity and stay between -1 and +1.
         )
 
